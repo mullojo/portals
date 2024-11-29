@@ -30,11 +30,11 @@ h2 {
   flex-direction: row;
   align-items: center; /* Vertically centers the content */
   gap: 10px;
-  color: hotpink;
   border: 1px solid hotpink;
   padding-left: 10px;
   border-radius: 5px;
 }
+
 
 button {
   font-family: inherit;
@@ -63,6 +63,13 @@ button:hover {
   background-image: url(https://cdn.jsdelivr.net/gh/mullojo/portals@main/basic/holographic-bkgnd.webp);
   background-size: 200%; 
   position: relative; /* Needed for :before positioning */
+  
+
+  /* Apply perspective and tilt effect 
+  perspective: 300px;
+  transform-style: preserve-3d;
+  transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg); 
+  */
  
   /* Animation */
   animation-duration: 30s;

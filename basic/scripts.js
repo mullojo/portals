@@ -1,8 +1,6 @@
 import qr from "https://cdn.jsdelivr.net/npm/qr-code-styling@1.6.0-rc.1/+esm";
-import feather from "https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/+esm";
-feather.replace();
 
-let address = "tb1q6th5dqvtum6khn77f2p33vlkyk40tdzkkp5mn8"; // edit to your address
+let address = "bc1q6z4nspyadq0sdq3vkcdtxxzwlywfva557wfqsm0h5g5xnnzrmpdq4cmhe6";
 
 let options = {
   width: 222,

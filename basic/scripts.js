@@ -59,7 +59,7 @@ function truncateAddress(address) {
     return address.slice(0, 6) + "..." + address.slice(-6);
   } else if (screenWidth >= 500 && screenWidth < 1024) {
     // Tablets
-    return address.slice(0, 18) + "..." + address.slice(-12);
+    return address.slice(0, 18) + "..." + address.slice(-18);
   } else {
     // Desktops
     return address; // Full address

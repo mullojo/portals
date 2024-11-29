@@ -64,12 +64,6 @@ button:hover {
   background-size: 200%; 
   position: relative; /* Needed for :before positioning */
   
-
-  /* Apply perspective and tilt effect 
-  perspective: 300px;
-  transform-style: preserve-3d;
-  transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg); 
-  */
  
   /* Animation */
   animation-duration: 30s;

@@ -14,7 +14,7 @@ A **Portal** is like a magical 🕳 where people can send Bitcoin gifts! With a 
 
 - **Customizable**: Replace the Bitcoin address in the `basic` directory with your own.
 - **Embed-Ready**: Use an `<iframe>` to embed the portal seamlessly on any website.
-- **No Dependencies**: Lightweight and efficient for fast loading.
+- **Lean & Simple**: Lightweight and efficient for fast loading.
 - **Clipboard Support**: One-click "Copy Address" functionality (with permissions).
 
 ---
@@ -92,6 +92,3 @@ This project is open-source under the MIT License. Use it freely and responsibly
 ---
 
 Ready to jump in? 🕳 Start forking, customizing, and sharing your own **Portal** today!
-``` 
-
-Let me know if you’d like to tweak or add anything! 🚀

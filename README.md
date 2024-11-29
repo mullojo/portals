@@ -8,7 +8,9 @@ Welcome to **Portals**, a simple and fun way to embed a Bitcoin address on your 
 
 A **Portal** is like a magical 🕳 where people can send Bitcoin gifts! With a sleek QR code and easy "Copy Address" button, it’s perfect for static embeds on blogs, personal websites, or any creative project.
 
-![Portal Example](basic/basic_static_portal.png)
+<p align="center">
+  <img src="basic/basic_static_portal.png" alt="Portal Example" style="max-width: 100%; width: 300px;">
+</p>
 
 👉 **[See it live here! 👀](https://mullojo.github.io/portals/basic/)**
 

@@ -7,67 +7,59 @@ let options = {
   height: 222,
   type: "svg",
   data: address,
-  dotsOptions: {
-    color: "hotpink",
-    type: "dots"
-  },
-  cornersSquareOptions: {
-    type: "dot"
-  },
-  cornersDotOptions: {
-    type: "dot"
-  },
-  backgroundOptions: {
-    color: null
-  },
-  imageOptions: {
-    crossOrigin: "anonymous",
-    margin: 20
-  }
+  dotsOptions: { color: "hotpink", type: "dots" },
+  cornersSquareOptions: { type: "dot" },
+  cornersDotOptions: { type: "dot" },
+  backgroundOptions: { color: null },
+  imageOptions: { crossOrigin: "anonymous", margin: 20 }
 };
 
-let qrCode = new qr(options);
+const qrCodeElem = document.getElementById("qr-code");
+if (qrCodeElem) {
+  const qrCode = new qr(options);
+  qrCode.append(qrCodeElem);
+}
 
-qrCode.append(document.getElementById("qr-code"));
+const addressElem = document.getElementById("address");
+if (addressElem) {
+  addressElem.innerHTML = truncateAddress(address);
+}
 
-let addressElem = document.getElementById("address");
-addressElem.innerHTML = truncateAddress(address);
-
-document.getElementById("copy-btn").addEventListener("click", copyAddress);
+const copyBtn = document.getElementById("copy-btn");
+if (copyBtn) {
+  copyBtn.addEventListener("click", copyAddress);
+}
 
 function copyAddress() {
-  const button = document.getElementById("copy-btn");
-  button.disabled = true; // Disable the button
+  if (!navigator.clipboard) return;
+  copyBtn.disabled = true;
+
   navigator.clipboard
     .writeText(address)
     .then(() => {
-      addressElem.innerHTML = "Address Copied ✅";
-
-      setTimeout(() => {
-        addressElem.textContent = truncateAddress(address);
-        button.disabled = false; // Re-enable the button after reset
-      }, 2222);
+      if (addressElem) {
+        addressElem.innerHTML = "Address Copied ✅";
+        setTimeout(() => {
+          addressElem.textContent = truncateAddress(address);
+          copyBtn.disabled = false;
+        }, 2222);
+      }
     })
     .catch((err) => {
-      console.log("Something went wrong", err);
-      button.disabled = false; // Re-enable in case of an error
+      console.error("Clipboard write failed:", err);
+      copyBtn.disabled = false;
     });
 }
 
 function truncateAddress(address) {
   const screenWidth = window.innerWidth;
-
-  if (screenWidth < 500) {
-    // For narrow screens, show the truncated address
-    return address.slice(0, 6) + "..." + address.slice(-6);
-  } else {
-    // Return full address for wider screens
-    return address;
-  }
+  return screenWidth < 500
+    ? address.slice(0, 6) + "..." + address.slice(-6)
+    : address;
 }
 
 function updateAddress() {
-  addressElem.textContent = truncateAddress(address);
+  if (addressElem) addressElem.textContent = truncateAddress(address);
 }
 
 window.addEventListener("resize", updateAddress);
